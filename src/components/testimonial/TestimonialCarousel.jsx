@@ -15,6 +15,7 @@ const TestimonialCarousel = () => {
           />
         </h1>
       </div>
+      <div className="w-full">
       <Marquee
         loop={2}
         // play={false}
@@ -25,11 +26,12 @@ const TestimonialCarousel = () => {
       >
         {/* <TestimonialCard /> */}
         <div className="flex">
-        <img src="/images/Testimonial card 1.png" alt="" className="mx-2 cursor-text" />
-        <img src="/images/Testimonial card 2.png" alt="" className="mx-2 cursor-text" />
-        <img src="/images/Testimonial card 3.png" alt="" className="mx-2 cursor-text" />
+        <img src="/images/Testimonial card 1.png" alt="" className="mx-2 cursor-text h-[412px]" />
+        <img src="/images/Testimonial card 2.png" alt="" className="mx-2 cursor-text h-[412px]" />
+        <img src="/images/Testimonial card 3.png" alt="" className="mx-2 cursor-text h-[412px]" />
         </div>
       </Marquee>
+    </div>
     </div>
   );
 };
