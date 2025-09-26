@@ -17,7 +17,7 @@ const skills = [
 const SkillsAndTools = () => {
   return (
     <div className="p-4 shadow-md rounded-2xl bg-white dark:bg-[#2A2A28] transition-colors duration-700 my-8 sm:my-0">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+      <h2 className="text-2xl tracking-tight font-semibold mb-4 text-gray-900 dark:text-white">
         Skills & Tools
       </h2>
 

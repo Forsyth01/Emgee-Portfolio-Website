@@ -76,8 +76,8 @@ const Connectwithme = () => {
       <div>
         {/* Heading */}
         <h2 className="text-3xl tracking-tighter font-semibold text-gray-800 dark:text-white mb-4 my-4">
-          <span className="tracking-tighter font-normal">Connect</span> <br />
-          <span className="font-bold tracking-tighter">With Me</span>
+          <span className="tracking-tighter font-regular">Connect</span> <br />
+          <span className="font-semibold tracking-tighter">With Me</span>
         </h2>
 
         {/* Social Links */}
@@ -102,7 +102,8 @@ const Connectwithme = () => {
         </div>
 
         {/* Contact Box */}
-        <div className="mt-6 bg-[#F6F6F3] dark:bg-[#1A1A19] p-4 rounded-lg">
+          <div className="h-[180px] flex flex-col justify-end">
+        <div className=" bg-[#F6F6F3] dark:bg-[#1A1A19] p-4 rounded-lg ">
           <p className="text-gray-600 dark:text-gray-400">
             Let's talk about your Project
           </p>
@@ -117,6 +118,7 @@ const Connectwithme = () => {
               </a>
             </span>
           </p>
+            </div>
         </div>
       </div>
     </div>

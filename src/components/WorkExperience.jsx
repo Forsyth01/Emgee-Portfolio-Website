@@ -78,8 +78,8 @@ const WorkExperience = () => {
         {/* Header */}
         <div className="flex justify-between py-4">
           <h2 className="text-3xl font-semibold tracking-tighter text-gray-800 dark:text-white mb-4">
-            <span className="font-normal tracking-tighter">Work </span>
-            <br /> <span className="font-bold">Experience</span>
+            <span className="font-regular tracking-tighter">Work </span>
+            <br /> <span className="font-semibold">Experience</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6 flex flex-col justify-end">
             5 Years
@@ -120,6 +120,7 @@ const WorkExperience = () => {
         </div>
 
         {/* Resume Button */}
+         <div className=" flex flex-col justify-end items-end">
         <div className="flex items-center justify-between py-6 mt-4">
           <div>
             <a href="/Elvis_Frimpong_CV.pdf" download="Elvis_Frimpong_CV.pdf">
@@ -131,6 +132,7 @@ const WorkExperience = () => {
               </button>
             </a>
           </div>
+        </div>
         </div>
       </div>
     </div>

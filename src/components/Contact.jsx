@@ -40,14 +40,14 @@ const Contact = () => {
         ref={imageRef}
         src="/images/contact.png"
         alt="Profile"
-        className="xl:h-90 "
+        className="" 
       />
       <div ref={textRef} className="sm:ml-8 pt-4 ">
-        <h1 className="sm:text-4xl text-3xl tracking-tighter leading-[1] font-bold text-gray-900 mb-4 dark:text-gray-50">
+        <h1 className="xl:text-4xl text-3xl tracking-tighter leading-[1.1] font-semibold text-gray-900 mb-4 dark:text-gray-50">
           Let’s bring your next <br className="sm:flex hidden" />  project to life with a  <br className="sm:flex hidden" /> creative edge.
         </h1>
-        <p className="text-gray-600 mb-6 tracking-tighter dark:text-gray-50">
-          Whether you're building a brand, an app, or a full product experience, purpose and clarity.
+        <p className="text-gray-600 mb-6 font-regular tracking-tight dark:text-gray-50">
+          Whether you're building a brand, an app, or a full product experience, <br />purpose and clarity.
           <br />
          I’m here to help you design it with 
         </p>

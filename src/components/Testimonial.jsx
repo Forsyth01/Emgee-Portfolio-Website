@@ -5,12 +5,12 @@ const Testimonial = () => {
   return (
     <div
       id="testimonial"
-      className="bg-white text-gray-900 dark:bg-[#1A1A19] dark:text-white  py-6 transition-colors duration-300"
+      className=" text-white bg-[#1A1A19]  py-6 transition-colors duration-300"
     >
       <div>
-        <h1 className="text-3xl text-center font-normal leading-[1] tracking-tighter py-4">
+        <h1 className="text-4xl text-center font-regular leading-[1.1] tracking-tighter py-4">
           Read Feedbacks, <br />
-          <span className="font-bold tracking-tight">Hire with confidence</span>
+          <span className="font-semibold tracking-tight">Hire with confidence</span>
         </h1>
       </div>
 
