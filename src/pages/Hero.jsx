@@ -23,7 +23,7 @@ const Hero = () => {
               <img
                 src="/images/profilepic.png"
                 alt="Frimpong Elvis profile"
-                className="h-50 w-50 xs:h-60 sm:w-20 md:h-24 md:w-24 
+                className="hidden md:flex h-50 w-50 xs:h-60 sm:w-20 md:h-24 md:w-24 
                max-h-[20vw] max-w-[20vw] min-h-[60px] min-w-[60px] 
                object-cover rounded-xl
                transition-transform duration-300 ease-in-out 

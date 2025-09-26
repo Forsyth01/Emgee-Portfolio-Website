@@ -8,8 +8,8 @@ const Portfolio = () => {
       id="portfolio"
       className="dark:bg-[#1A1A19] bg-[#F5F8E9] py-8 transition-colors duration-700 "
     >
-      <div className="bg-white dark:bg-[#222222] rounded-2xl w-[90%] m-auto p-8 transition-colors duration-700">
-        <h1 className="text-center text-3xl font-semibold tracking-tighter text-gray-900 dark:text-white pb-2 pt-4">
+      <div className="lg:bg-white lg:dark:bg-[#222222] rounded-2xl w-[90%] m-auto lg:p-8 transition-colors duration-700">
+        <h1 className="md:text-center text-left text-2xl md:text-3xl font-medium md:font-semibold tracking-tighter text-gray-900 dark:text-white pb-2 pt-4">
           Portfolio / Case Studies
         </h1>
 
@@ -46,7 +46,10 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="flex justify-end mt-6">
+        <div className="flex justify-between items-center mt-6">
+          <div className="">
+            <p className="font-medium dark:text-white tracking-tighter">See more projects?</p>
+          </div>
           <button className="flex items-center font-medium gap-2 bg-[#C2DE3A] rounded-full px-4 py-2">
             View All
             <span>

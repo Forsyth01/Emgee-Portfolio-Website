@@ -15,7 +15,22 @@
       name="description"
       content="Emgee is a UI/UX designer and graphic designer with 5 years of experience creating engaging, user-focused digital and visual designs."
     />
+
     <title>George</title>
+
+    <!-- ✅ Prevent flash of wrong theme -->
+    <script>
+      (function () {
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = storedTheme || (prefersDark ? "dark" : "light");
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

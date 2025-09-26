@@ -104,7 +104,12 @@ const Connectwithme = () => {
         {/* Contact Box */}
           <div className="h-[180px] flex flex-col justify-end">
         <div className=" bg-[#F6F6F3] dark:bg-[#1A1A19] p-4 rounded-lg ">
-          <p className="text-gray-600 dark:text-gray-400">
+          <div className="flex items-center gap-4">
+          <div className="">
+            <img src="/images/envelope.png" alt="Contact" className="sm:h-12 " />
+          </div>
+          <div className="">
+          <p className=" font-medium tracking-tighter">
             Let's talk about your Project
           </p>
           <p className="text-gray-800 dark:text-gray-200">
@@ -112,12 +117,14 @@ const Connectwithme = () => {
             <span className="font-medium tracking-tighter cursor-pointer">
               <a
                 href="mailto:georgekyrian@gmail.com"
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="dark:text-[#C2DE3A] hover:underline"
               >
                 georgekyrian@gmail.com
               </a>
             </span>
           </p>
+            </div>
+            </div>
             </div>
         </div>
       </div>

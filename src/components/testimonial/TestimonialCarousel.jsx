@@ -5,7 +5,7 @@ import TestimonialCard from "./TestimonialCard";
 const TestimonialCarousel = () => {
   return (
     <div className=" block lg:flex items-center py-2 transition-colors duration-700">
-      <div className="lg:relative lg:left-[5%] flex text-center md:text-left lg:w-[50%] ">
+      <div className="hidden md:flex lg:relative lg:left-[5%] text-center md:text-left lg:w-[50%] ">
         <h1 className="text-[38px] leading-[1.1] font-semibold tracking-tighter text-white">
           What Our <br /> Clients <br />say about us
           <img
