@@ -116,7 +116,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <div className="container w-[90%] xs:w-[85%] sm:w-[70%] lg:w-[50%] mx-auto grid place-items-center">
+            <div className="containe xs:w-[85%] sm:w-[70%] md:w-[80%] lg:w-[80%]  mx-auto grid place-items-center">
               <div className="bg-[#C2DE3A] rounded-full px-6 py-2">
                 <ul className="flex items-center gap-1">
                   {navLinks.map((link) => (
