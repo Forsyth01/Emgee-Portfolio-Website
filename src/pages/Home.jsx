@@ -11,13 +11,13 @@ import Experience from "../components/Experience";
 const Home = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Hero />
       <About />
-      <Portfolio/>
-      <Testimonial/>
-      <Experience/>
-      <Contact/>
+      <Portfolio />
+      <Testimonial />
+      <Experience />
+      <Contact />
       {/* <Footer/> */}
     </div>
   );

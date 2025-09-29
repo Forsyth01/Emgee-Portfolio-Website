@@ -112,8 +112,8 @@ export const projects = [
     description: "UI Revamp for EMB Telecomms",
     coverImage: "/images/projects/emb.png",
     images: [
-      { src: "/images/projects/emb.png", span: true },
-      { src: "/images/projects/emb-2.png", span: false },
+      { src: "/images/projects/emb/emb1.jpg", span: false },
+      { src: "/images/projects/emb/emb2.jpg", span: false },
     ],
     roles: ["UI/UX Designer"],
     tools: [

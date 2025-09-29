@@ -2,16 +2,17 @@ import { useParams } from "react-router-dom";
 import { projects } from "../data/projects";
 import Contact from "./Contact";
 import { motion } from "framer-motion";
+import BackAndToggleButton from "./Back&ToggleButton";
 
+// Stagger container for gallery
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
+// Individual image animation
 const imgVariant = {
   hidden: { opacity: 0, scale: 0.95, y: 20 },
   visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.55 } },
@@ -21,16 +22,16 @@ const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === parseInt(id));
 
-  if (!project) {
-    return <p className="p-4 text-red-500">Project not found</p>;
-  }
+  if (!project) return <p className="p-4 text-red-500">Project not found</p>;
 
   return (
-    <div className="bg-[#F5F8E9] py-20 dark:bg-[#1e1e1e] transition-colors duration-700">
+    <div className="bg-[#F5F8E9] py-10 dark:bg-[#1e1e1e] transition-colors duration-700">
+        <BackAndToggleButton/>
       <div className="max-w-[90%] mx-auto py-12">
+
         {/* Title + Date */}
         <motion.div
-          className="flex items-center justify-between pb-2"
+          className="flex items-center justify-between md:pb-2"
           initial={{ opacity: 0, y: -18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
@@ -39,14 +40,14 @@ const ProjectDetail = () => {
           <h1 className="text-2xl font-semibold tracking-tighter text-black dark:text-white">
             {project.title}
           </h1>
-          <p className="text-xl font-regular text-gray-700 dark:text-gray-300">
+          <p className="md:text-xl text-sm font-regular text-gray-700 dark:text-gray-300">
             {project.date}
           </p>
         </motion.div>
 
         {/* Description + Tools */}
         <motion.div
-          className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+          className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mt-4"
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.25 }}
@@ -56,7 +57,7 @@ const ProjectDetail = () => {
             {project.description}
           </p>
 
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap mt-2 md:mt-0">
             <h2 className="text-xl font-semibold text-black dark:text-white">
               Tools:
             </h2>
@@ -94,12 +95,16 @@ const ProjectDetail = () => {
             Role:
           </h2>
           {project.roles?.map((role, idx) => (
-            <span
+            <motion.span
               key={idx}
               className="text-xl tracking-tight font-normal text-gray-800 dark:text-gray-300"
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
               {role}
-            </span>
+            </motion.span>
           ))}
         </motion.div>
 
@@ -115,9 +120,15 @@ const ProjectDetail = () => {
             <h2 className="text-xl font-semibold tracking-tighter text-black dark:text-white">
               Read Description:
             </h2>
-            <p className="text-md mb-6 text-gray-800 dark:text-gray-300">
+            <motion.p
+              className="text-md mb-6 text-gray-800 dark:text-gray-300"
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.6 }}
+            >
               {project.roleDescription}
-            </p>
+            </motion.p>
           </motion.div>
         )}
 
@@ -135,9 +146,7 @@ const ProjectDetail = () => {
                 key={idx}
                 src={img.src}
                 alt={`${project.title} screenshot ${idx + 1}`}
-                className={`rounded-lg shadow-lg object-cover w-full h-90 ${
-                  img.span ? "md:col-span-2" : ""
-                }`}
+                className={`rounded-lg shadow-lg object-cover w-full h-90`}
                 variants={imgVariant}
               />
             ))

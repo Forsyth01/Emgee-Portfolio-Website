@@ -41,13 +41,13 @@ const Navbar = () => {
       </div>
 
       {/* Navbar */}
-      <nav className="fixed w-full z-10 top-0 py-4 sm:py-0 backdrop-blur-s">
+      <nav className="fixed w-full z-10 top-0 py-4 sm:py-0 backdrop-blur-sm">
         <div className="py-4 relative">
           {/* Toggle Button for Mobile */}
           <div className="md:hidden flex justify-between item-center mx-3">
             <img src="/images/mobilehead.png" alt="" className="h-12" />
             <button
-              className="text-black bg-[#C2DE3A] rounded-full px-2 dark:text-black focus:outline-none"
+              className="text-black bg-[#C2DE3A] rounded-xl p-2 dark:text-black focus:outline-none"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
