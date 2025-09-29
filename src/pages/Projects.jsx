@@ -14,10 +14,10 @@ const Projects = () => {
         <div className="py-10 text-center font-semibold xl:text-4xl text-2xl tracking-tight">
           <h1 className="dark:text-white">
             Check out some of my works <br />
-            carefully crafted with Love and <br /> dedication.
+            carefully crafted with Love and <br className="hidden md:flex"/> dedication.
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 mt-6 place-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 mt-6 space-y-6 md:space-y-0 place-items-center">
           {projects.map((project, index) => (
             <Link
               key={project.id}

@@ -14,7 +14,7 @@ const Portfolio = () => {
           Portfolio / Case Studies
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 mt-6 place-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 space-y-6 md:space-y-0 mt-6 place-items-center">
           {projects.map((project, index) => (
             <Link
               key={project.id}

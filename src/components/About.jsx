@@ -6,9 +6,9 @@ const About = () => {
   return (
     <div
       id="about"
-      className="dark:bg-[#1A1A19] transition-colors duration-700 "
+      className="md:dark:bg-[#1A1A19] dark:bg-[#2A2A28] transition-colors duration-700 "
     >
-      <div className="md:flex items-center justify-center gap-10 w-[90%] m-auto py-20">
+      <div className="md:flex items-center justify-center gap-10 w-[90%] m-auto md:py-20 py-10">
         <div className="xl:bg-[#F6F6F3] dark:bg-[#2A2A28] rounded-2xl md:p-6 transition-colors duration-700 2xl:w-[671px]">
           <h2 className="text-3xl font-semibold tracking-tighter ml-2 mb-6 text-gray-900 dark:text-white">
             About Me

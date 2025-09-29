@@ -25,7 +25,7 @@ const SkillsAndTools = () => {
         {skills.map((skill, index) => (
           <li
             key={index}
-            className="flex items-center gap-2 bg-[#F5F8E9] dark:bg-[#3A3A38] rounded-full px-4 py-2 font-medium tracking-tight text-md text-gray-900 dark:text-gray-200 transition-colors duration-700"
+            className="flex items-center gap-2 bg-[#F5F8E9] dark:bg-[#3A3A38] rounded-full px-4 md:py-2 py-1 font-medium tracking-tight md:text-md text-sm text-gray-900 dark:text-gray-200 transition-colors duration-700"
           >
             {skill.icon && (
               <img
