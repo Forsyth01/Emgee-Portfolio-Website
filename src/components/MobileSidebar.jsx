@@ -84,7 +84,7 @@ const MobileSidebar = ({
         </ul>
 
         {/* Footer with theme toggle */}
-        <div className="p-6 border-t border-gray-200">
+        <div className="p-6 border-gray-200">
           <div className="flex items-center gap-2">
             <h1 className="tracking-tight">Switch Themes</h1>
             <ThemeToggle />

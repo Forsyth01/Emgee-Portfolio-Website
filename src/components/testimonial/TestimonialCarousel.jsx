@@ -17,7 +17,7 @@ const TestimonialCarousel = () => {
       </div>
       <div className="w-full">
       <Marquee
-        loop={2}
+        loop={0}
         // play={false}
         autoFill={true}
         gradient={true}
