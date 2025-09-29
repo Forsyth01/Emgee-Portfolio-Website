@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Hero from "./Hero";
+import Hero from "../components/Hero";
 import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Testimonial from "../components/Testimonial";
@@ -11,14 +11,14 @@ import Experience from "../components/Experience";
 const Home = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <About />
       <Portfolio/>
       <Testimonial/>
       <Experience/>
       <Contact/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };

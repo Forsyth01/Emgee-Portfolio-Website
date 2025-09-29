@@ -1,4 +1,5 @@
 import React from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const MobileSidebar = ({ isOpen, navLinks, activeLink, setActiveLink, onClose }) => {
   return (
@@ -33,6 +34,7 @@ const MobileSidebar = ({ isOpen, navLinks, activeLink, setActiveLink, onClose })
               </a>
             </li>
           ))}
+          <ThemeToggle/>
         </ul>
       </div>
     </div>

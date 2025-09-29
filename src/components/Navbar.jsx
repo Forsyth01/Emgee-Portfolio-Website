@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import MobileSidebar from "./MobileSidebar";
 import { MenuIcon } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
+  const location = useLocation();
   const [activeLink, setActiveLink] = useState(window.location.hash || "#");
   const [isOpen, setIsOpen] = useState(false);
 
+  // ✅ Update active link when hash changes (click)
   useEffect(() => {
     const handleHashChange = () => {
       setActiveLink(window.location.hash || "#");
@@ -32,23 +36,23 @@ const Navbar = () => {
   return (
     <>
       {/* Dark/Light Mode Button */}
-      <div className="fixed z-[500] top-[5%] right-[2%]">
+      <div className="md:fixed z-[500] top-[6%] right-[5%] hidden md:flex">
         <ThemeToggle />
       </div>
 
       {/* Navbar */}
-      <nav className="fixed w-full z-10 top-0 py-4 sm:py-0 backdrop-blur-sm">
+      <nav className="fixed w-full z-10 top-0 py-4 sm:py-0 backdrop-blur-s">
         <div className="py-4 relative">
           {/* Toggle Button for Mobile */}
           <div className="md:hidden flex justify-between item-center mx-4">
             <img src="/images/mobilehead.png" alt="" className="h-12" />
-          <button
-            className=" text-gray-900 dark:text-white focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            <MenuIcon size={30} />
-          </button>
+            <button
+              className="text-gray-900 dark:text-white focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              <MenuIcon size={30}  />
+            </button>
           </div>
 
           {/* Mobile Sidebar */}
@@ -64,29 +68,77 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="container xs:w-[85%] sm:w-[70%] md:w-[80%] lg:w-[80%] mx-auto grid place-items-center">
               <div className="bg-[#C2DE3A] rounded-full px-6 py-3">
-                <ul className="flex items-center gap-1">
-                  {navLinks.map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={link.href}
-                        {...(link.download ? { download: true } : {})}
-                        className={`block px-3 py-1 text-base font-medium tracking-tight transition-colors duration-200 ${
-                          link.isButton
-                            ? "bg-white text-gray-900 rounded-full hover:bg-gray-100 px-6 py-2"
-                            : activeLink === link.href
-                            ? "text-white bg-black/20 rounded-full"
-                            : "text-gray-900 hover:text-white"
-                        }`}
-                        onClick={() => {
-                          if (!link.download) {
-                            setActiveLink(link.href);
-                          }
-                        }}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
+                <ul className="flex items-center gap-1 relative">
+                  {navLinks.map((link) => {
+                    const isActive =
+                      (link.label === "Home" &&
+                        location.pathname === "/" &&
+                        activeLink === "#") ||
+                      activeLink === link.href;
+
+                    return (
+                      <li key={link.label} className="relative">
+                        {link.label === "Home" ? (
+                          location.pathname === "/" ? (
+                            // ✅ On homepage → act as anchor
+                            <a
+                              href="#"
+                              className="relative block px-3 py-1 text-base font-medium tracking-tight text-gray-900"
+                              onClick={() => setActiveLink("#")}
+                            >
+                              {isActive && (
+                                <motion.div
+                                  layoutId="activeBubble"
+                                  className="absolute inset-0 rounded-full bg-black/20"
+                                  transition={{
+                                    type: "spring",
+                                    stiffness: 500,
+                                    damping: 30,
+                                  }}
+                                />
+                              )}
+                              <span className="relative z-10">Home</span>
+                            </a>
+                          ) : (
+                            // ✅ On another page → go back home
+                            <Link
+                              to="/"
+                              className="relative block px-3 py-1 text-base font-medium tracking-tight text-gray-900"
+                            >
+                              Home
+                            </Link>
+                          )
+                        ) : link.isButton ? (
+                          <a
+                            href={link.href}
+                            download={link.download}
+                            className="bg-white text-gray-900 rounded-full hover:bg-gray-100 px-6 py-2"
+                          >
+                            {link.label}
+                          </a>
+                        ) : (
+                          <a
+                            href={link.href}
+                            className="relative block px-3 py-1 text-base font-medium tracking-tight text-gray-900"
+                            onClick={() => setActiveLink(link.href)}
+                          >
+                            {isActive && (
+                              <motion.div
+                                layoutId="activeBubble"
+                                className="absolute inset-0 rounded-full bg-black/20"
+                                transition={{
+                                  type: "spring",
+                                  stiffness: 500,
+                                  damping: 30,
+                                }}
+                              />
+                            )}
+                            <span className="relative z-10">{link.label}</span>
+                          </a>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

@@ -18,12 +18,14 @@
 
     <title>George</title>
 
-    <!-- ✅ Prevent flash of wrong theme -->
     <script>
       (function () {
         const storedTheme = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
         const theme = storedTheme || (prefersDark ? "dark" : "light");
+
         if (theme === "dark") {
           document.documentElement.classList.add("dark");
         } else {

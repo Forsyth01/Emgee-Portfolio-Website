@@ -1,28 +1,14 @@
-// src/context/ThemeContext.js
 import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(undefined); // start undefined
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "light" // ✅ match script default
+  );
 
-  // On mount, sync theme with <html> and localStorage
+  // Apply theme to <html> on mount and whenever it changes
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-    } else {
-      // fallback to system preference
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const defaultTheme = prefersDark ? "dark" : "light";
-      setTheme(defaultTheme);
-      localStorage.setItem("theme", defaultTheme);
-    }
-  }, []);
-
-  // Apply theme whenever it changes
-  useEffect(() => {
-    if (!theme) return; // wait until initialized
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {

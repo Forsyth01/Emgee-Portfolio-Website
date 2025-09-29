@@ -1,6 +1,7 @@
 import React from "react";
 import { projects } from "../data/projects";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   return (
@@ -15,47 +16,55 @@ const Portfolio = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 mt-6 place-items-center">
           {projects.map((project, index) => (
-            <a
+            <Link
               key={project.id}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`cursor-pointer ${index > 3 ? "2xl:hidden" : ""}`}
+              to={`/projects/${project.id}`}
+              className={`cursor-pointer hover:-translate-y-1 transition-transform duration-700 ${
+                index > 3 ? "2xl:hidden" : ""
+              }`}
             >
-              <div className="bg-[#F5F8E9] dark:bg-[#1e1e1e] rounded-2xl hover:-translate-y-1 transition-transform duration-700 w-fit">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="dark:bg-[#1e1e1e]"
-                />
-                {/* <div className="px-4 pb-4">
-                  <div className="flex items-center justify-between mt-3">
-                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+              {/* Card Container */}
+              <div className=" flex flex-col rounded-2xl shadow bg-white dark:bg-[#F5F8E9]">
+                {/* Image */}
+                <div className=" w-full">
+                  <img
+                    src={project.coverImage}
+                    alt={project.title}
+                    className=" object-cover rounded-t-2xl"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col flex-1 px-4 pb-4 pt-3">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-lg font-semibold text-black dark:text-black">
                       {project.title}
                     </h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-[12px] text-gray-500 dark:text-gray-500">
                       {project.date}
                     </p>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 mt-2">
+                  <p className="text-gray-700 dark:text-black text-sm mt-2 line-clamp-3">
                     {project.description}
                   </p>
-                </div> */}
+                  {/* Spacer pushes description + keeps equal height */}
+                  <div className="flex-grow" />
+                </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="flex justify-between items-center mt-6">
-          <div className="">
-            <p className="font-medium dark:text-white tracking-tighter">See more projects?</p>
-          </div>
-          <button className="flex items-center font-medium gap-2 bg-[#C2DE3A] rounded-full px-4 py-2">
-            View All
-            <span>
+          <p className="font-medium dark:text-white tracking-tighter">
+            See more projects?
+          </p>
+          <Link to="/projects">
+            <button className="flex items-center font-medium gap-2 bg-[#C2DE3A] rounded-full px-4 py-2">
+              View All
               <ArrowUpRight size={16} />
-            </span>
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
