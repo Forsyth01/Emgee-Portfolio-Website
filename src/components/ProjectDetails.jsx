@@ -4,6 +4,8 @@ import { projects } from "../data/projects";
 import Contact from "./Contact";
 import { motion } from "framer-motion";
 import BackAndToggleButton from "./Back&ToggleButton";
+import { useState, useEffect } from "react";
+import { X } from "lucide-react"; // X icon for close button
 
 // Stagger container for gallery
 const containerVariants = {
@@ -22,6 +24,17 @@ const imgVariant = {
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === parseInt(id));
+  const [lightboxImg, setLightboxImg] = useState(null); // Track clicked image
+
+  // Disable scroll when lightbox is open
+  useEffect(() => {
+    if (lightboxImg) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => (document.body.style.overflow = "auto");
+  }, [lightboxImg]);
 
   if (!project) return <p className="p-4 text-red-500">Project not found</p>;
 
@@ -149,11 +162,12 @@ const ProjectDetail = () => {
                   img.span ? "md:col-span-2" : "md:col-span-1"
                 }`}
                 variants={imgVariant}
+                onClick={() => setLightboxImg(img.src)}
               >
                 <img
                   src={img.src}
                   alt={`${project.title} screenshot ${idx + 1}`}
-                  className="w-full  object-cover"
+                  className="w-full object-cover cursor-pointer"
                 />
               </motion.div>
             ))
@@ -161,7 +175,8 @@ const ProjectDetail = () => {
             <motion.img
               src={project.coverImage}
               alt={project.title}
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg cursor-pointer"
+              onClick={() => setLightboxImg(project.coverImage)}
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.25 }}
@@ -170,6 +185,32 @@ const ProjectDetail = () => {
           )}
         </motion.div>
       </div>
+
+      {/* Lightbox Overlay */}
+      {lightboxImg && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          onClick={() => setLightboxImg(null)} // click outside image closes
+        >
+          {/* Close Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation(); // prevent overlay click
+              setLightboxImg(null);
+            }}
+            className="absolute top-10 right-5 md:right-[1%]  text-2xl p-2 rounded-full bg-white text-black hover:bg-opacity-20 transition"
+          >
+            <X size={32} />
+          </button>
+
+          <img
+            src={lightboxImg}
+            alt="Enlarged view"
+            className="max-h-[90%] max-w-[90%] rounded-lg shadow-lg"
+            onClick={(e) => e.stopPropagation()} // clicking image itself does not close
+          />
+        </div>
+      )}
 
       {/* Contact Section */}
       <motion.div

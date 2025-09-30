@@ -18,7 +18,7 @@ const BackAndToggleButton = ({ fallback = "/", className }) => {
 
   return (
     <motion.div
-      className={`sticky top-10 z-[999] md:w-[95%] m-auto md:px-6 px-4 flex items-center justify-between ${className}`}
+      className={`sticky top-10 z-[500] md:w-[95%] m-auto md:px-6 px-4 flex items-center justify-between ${className}`}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }} // 👈 delay before showing
