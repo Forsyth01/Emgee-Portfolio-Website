@@ -1,5 +1,4 @@
-// Hero.jsx
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useLayoutEffect } from "react";
 import { BriefcaseBusiness } from "lucide-react";
 import gsap from "gsap";
 
@@ -8,6 +7,29 @@ const Hero = () => {
   const vectorRightRef = useRef(null);
   const vectorLeftRef = useRef(null);
   const elementsRef = useRef([]); // [profile, intro, headingContainer, paragraph, button]
+
+  // 🚀 Prevent flash by setting initial states before paint
+  useLayoutEffect(() => {
+    gsap.set([vectorRightRef.current, vectorLeftRef.current], {
+      opacity: 0,
+      x: 0,
+      rotationY: 0,
+      scale: 0.9,
+    });
+
+    if (elementsRef.current[2]) {
+      gsap.set(elementsRef.current[2].querySelectorAll(".word"), {
+        opacity: 0,
+        y: 46,
+        rotationX: 60,
+      });
+    }
+
+    gsap.set(elementsRef.current[0], { opacity: 0, scale: 0.75, rotationY: 35 });
+    gsap.set(elementsRef.current[1], { opacity: 0, y: 18, rotationX: 18 });
+    gsap.set(elementsRef.current[3], { opacity: 0, y: 28 });
+    gsap.set(elementsRef.current[4], { opacity: 0, y: 14, scale: 0.94 });
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -18,81 +40,63 @@ const Hero = () => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       // Backgrounds
-      tl.from(
-        vectorRightRef.current,
-        {
-          opacity: 0,
-          x: 220,
-          rotationY: 80,
-          scale: 0.86,
-          duration: 1.6,
-        },
-        0
-      ).from(
+      tl.to(vectorRightRef.current, {
+        opacity: 1,
+        x: 0,
+        rotationY: 0,
+        scale: 1,
+        duration: 1.6,
+      }).to(
         vectorLeftRef.current,
         {
-          opacity: 0,
-          x: -220,
-          rotationY: -80,
-          scale: 0.86,
+          opacity: 1,
+          x: 0,
+          rotationY: 0,
+          scale: 1,
           duration: 1.6,
         },
         0.2
       );
 
       // Floating loop
-      tl.call(
-        () => {
-          gsap.to(vectorRightRef.current, {
-            y: 14,
-            duration: 6,
-            yoyo: true,
-            repeat: -1,
-            ease: "sine.inOut",
-          });
-          gsap.to(vectorLeftRef.current, {
-            y: -14,
-            duration: 6,
-            yoyo: true,
-            repeat: -1,
-            ease: "sine.inOut",
-          });
-        },
-        null,
-        "+=0.2"
-      );
+      tl.call(() => {
+        gsap.to(vectorRightRef.current, {
+          y: 14,
+          duration: 6,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
+        gsap.to(vectorLeftRef.current, {
+          y: -14,
+          duration: 6,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
+      }, null, "+=0.2");
 
       // Profile
-      tl.from(
+      tl.to(
         elementsRef.current[0],
-        {
-          opacity: 0,
-          scale: 0.75,
-          rotationY: 35,
-          duration: 1,
-        },
+        { opacity: 1, scale: 1, rotationY: 0, duration: 1 },
         0.6
       );
 
       // Intro
-      tl.from(
+      tl.to(
         elementsRef.current[1],
-        {
-          opacity: 0,
-          y: 18,
-          rotationX: 18,
-          duration: 1,
-        },
+        { opacity: 1, y: 0, rotationX: 0, duration: 1 },
         1
       );
 
-      // Heading words (slower stagger)
-      tl.from(
+      // Heading words
+      tl.to(
         headingSpans,
         {
-          opacity: 0,
-          y: 46,
-          rotationX: 60,
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
           duration: 1.1,
           stagger: 0.12,
           ease: "power4.out",
@@ -101,26 +105,16 @@ const Hero = () => {
       );
 
       // Paragraph
-      tl.from(
+      tl.to(
         elementsRef.current[3],
-        {
-          opacity: 0,
-          y: 28,
-          duration: 1.1,
-        },
+        { opacity: 1, y: 0, duration: 1.1 },
         ">-0.3"
       );
 
       // Button
-      tl.from(
+      tl.to(
         elementsRef.current[4],
-        {
-          opacity: 0,
-          y: 14,
-          scale: 0.94,
-          duration: 0.9,
-          ease: "back.out(1.4)",
-        },
+        { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "back.out(1.4)" },
         ">-0.2"
       );
     }, heroRef);
@@ -134,27 +128,26 @@ const Hero = () => {
       className="bg-[#F5F8E9] dark:bg-[#1A1A19] transition-colors duration-700 relative overflow-hidden perspective-[1200px]"
     >
       {/* Background graphics */}
-<div
-  ref={vectorRightRef}
-  className="hidden lg:flex absolute right-0 top-0 pointer-events-auto group"
->
-  <img
-    src="images/Vector.png"
-    alt=""
-    className="transition-transform duration-500 ease-in-out group-hover:rotate-6"
-  />
-</div>
-<div
-  ref={vectorLeftRef}
-  className="hidden xl:flex absolute left-0 bottom-0 pointer-events-auto group"
->
-  <img
-    src="images/Vector2.png"
-    alt=""
-    className="transition-transform duration-500 ease-in-out group-hover:-rotate-6"
-  />
-</div>
-
+      <div
+        ref={vectorRightRef}
+        className="hidden lg:flex absolute right-0 top-0 pointer-events-auto group"
+      >
+        <img
+          src="images/Vector.png"
+          alt=""
+          className="transition-transform duration-500 ease-in-out group-hover:rotate-6"
+        />
+      </div>
+      <div
+        ref={vectorLeftRef}
+        className="hidden xl:flex absolute left-0 bottom-0 pointer-events-auto group"
+      >
+        <img
+          src="images/Vector2.png"
+          alt=""
+          className="transition-transform duration-500 ease-in-out group-hover:-rotate-6"
+        />
+      </div>
 
       {/* Content */}
       <div className="min-h-[95vh] sm:min-h-[80vh] lg:min-h-[100vh] flex items-center justify-center">
