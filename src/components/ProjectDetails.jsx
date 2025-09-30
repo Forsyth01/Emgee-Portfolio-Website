@@ -25,8 +25,8 @@ const ProjectDetail = () => {
   if (!project) return <p className="p-4 text-red-500">Project not found</p>;
 
   return (
-    <div className=" h-full">
-    <div className=" bg-[#F5F8E9] py-10 dark:bg-[#1e1e1e] transition-colors duration-700">
+    <div className="">
+    <div className="min-h-screen bg-[#F5F8E9] py-10 dark:bg-[#1e1e1e] transition-colors duration-700">
         <BackAndToggleButton/>
       <div className="max-w-[90%] mx-auto py-12">
 
@@ -164,6 +164,7 @@ const ProjectDetail = () => {
           )}
         </motion.div>
       </div>
+    </div>
       {/* Contact Section */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -173,7 +174,6 @@ const ProjectDetail = () => {
       >
         <Contact />
       </motion.div>
-    </div>
     </div>
   );
 };

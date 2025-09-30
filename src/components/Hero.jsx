@@ -69,7 +69,7 @@ const Hero = () => {
 
             {/* Intro */}
             <motion.div variants={fadeUp}>
-              <p className="font-medium text-[24px] text-gray-900 dark:text-white tracking-tight">
+              <p className="font-medium text-lg md:text-[24px] text-gray-900 dark:text-white tracking-tight">
                 Hi, I’m George 👋
               </p>
             </motion.div>
@@ -77,14 +77,14 @@ const Hero = () => {
             {/* Heading + Paragraph */}
             <div className="space-y-4">
               <motion.div variants={fadeUp}>
-                <h1 className="font-semibold text-[36px] xs:text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[6xl] leading-[108%] tracking-tighter text-gray-900 dark:text-white">
+                <h1 className="font-semibold text-[30px] xs:text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[6xl] leading-[108%] tracking-tighter text-gray-900 dark:text-white">
                   Designing Digital <br />
                   Experiences That Convert &{" "}
                   <br className="hidden sm:flex 2xl:hidden" /> Communicate
                 </h1>
               </motion.div>
               <motion.div variants={fadeUp}>
-                <p className="font-regular text-[16px] xs:text-sm sm:text-base md:text-lg lg:text-lg xl:text-md text-gray-700 dark:text-gray-300 max-w-[90%] sm:max-w-2xl mx-auto">
+                <p className="font-regular text-[12px] xs:text-sm sm:text-base md:text-lg lg:text-lg xl:text-md text-gray-700 dark:text-gray-300 max-w-[90%] sm:max-w-2xl mx-auto">
                   I’m George, a UI/UX and Graphic Designer helping brands stand
                   out through clean, user-focused visuals and strategy.
                 </p>

@@ -41,11 +41,11 @@ const About = () => {
             About Me
           </motion.h2>
 
-          <div className="flex lg:flex md:block items-center gap-4">
+          <div className="flex xl:flex md:block items-center gap-4">
             <motion.img
               src="/images/aboutme.png"
               alt="Profile"
-              className="h-[148px] xl:h-[230px] lg:h-[180px]"
+              className="h-[148px] xl:h-[230px] lg:h-[180px] md:h-[220px] md:pb-3 lg:pb-0"
               variants={item}
             />
             <motion.div className="text-gray-800 dark:text-white" variants={item}>
