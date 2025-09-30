@@ -1,3 +1,4 @@
+// ProjectDetail.jsx
 import { useParams } from "react-router-dom";
 import { projects } from "../data/projects";
 import Contact from "./Contact";
@@ -25,11 +26,10 @@ const ProjectDetail = () => {
   if (!project) return <p className="p-4 text-red-500">Project not found</p>;
 
   return (
-    <div className="">
-    <div className="min-h-screen bg-[#F5F8E9] py-10 dark:bg-[#1e1e1e] transition-colors duration-700">
-        <BackAndToggleButton/>
-      <div className="max-w-[90%] mx-auto py-12">
+    <div className="bg-[#F5F8E9] dark:bg-[#1e1e1e] transition-colors duration-700 py-10">
+      <BackAndToggleButton />
 
+      <div className="max-w-[90%] min-h-screen mx-auto py-12">
         {/* Title + Date */}
         <motion.div
           className="flex items-center justify-between md:pb-2"
@@ -143,13 +143,19 @@ const ProjectDetail = () => {
         >
           {project.images && project.images.length > 0 ? (
             project.images.map((img, idx) => (
-              <motion.img
+              <motion.div
                 key={idx}
-                src={img.src}
-                alt={`${project.title} screenshot ${idx + 1}`}
-                className={`rounded-lg shadow-lg object-cover w-full h-90`}
+                className={`rounded-lg shadow-lg overflow-hidden ${
+                  img.span ? "md:col-span-2" : "md:col-span-1"
+                }`}
                 variants={imgVariant}
-              />
+              >
+                <img
+                  src={img.src}
+                  alt={`${project.title} screenshot ${idx + 1}`}
+                  className="w-full h-90 object-cover"
+                />
+              </motion.div>
             ))
           ) : (
             <motion.img
@@ -164,7 +170,7 @@ const ProjectDetail = () => {
           )}
         </motion.div>
       </div>
-    </div>
+
       {/* Contact Section */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
