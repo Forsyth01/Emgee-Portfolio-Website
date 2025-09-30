@@ -63,7 +63,7 @@ const Contact = () => {
                   href="mailto:georgekyrian@gmail.com"
                   className="tracking-wide flex items-center gap-2"
                 >
-                  Let&apos;s Discuss <span>😊</span>
+                  Let&apos;s Discuss
                 </a>
               </button>
             </div>

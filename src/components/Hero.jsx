@@ -214,10 +214,7 @@ const Hero = () => {
                   className="flex items-center gap-2"
                 >
                   <span className="font-medium">Hire Me</span>
-                  <BriefcaseBusiness
-                    size={18}
-                    className="transform transition-transform duration-300 group-hover:rotate-12"
-                  />
+
                 </a>
               </button>
             </div>

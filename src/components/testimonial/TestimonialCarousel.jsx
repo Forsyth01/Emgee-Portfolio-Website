@@ -5,15 +5,18 @@ import TestimonialCard from "./TestimonialCard";
 const TestimonialCarousel = () => {
   return (
     <div className=" block lg:flex items-center py-2 transition-colors duration-700">
-      <div className="hidden lg:flex lg:relative lg:left-[5%] text-center md:text-left lg:w-[50%] ">
+      <div className="hidden lg:flex lg:relative lg:left-[5%] text-center md:text-left lg:w-[45%] xl:w-[40%] ">
+        <div className="">
+          <img src="/images/quote.png" alt="" className="h-30 my-2" />
         <h1 className="text-[38px] leading-[1.1] font-semibold tracking-tighter text-white">
           What Our <br /> Clients <br />say about us
-          <img
+          {/* <img
             src="/images/line.png"
             alt=""
             className="py-10 cursor-pointer  m-auto lg:m-0 "
-          />
+          /> */}
         </h1>
+      </div>
       </div>
       <div className="w-full">
       <Marquee
