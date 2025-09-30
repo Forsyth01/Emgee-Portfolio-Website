@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
+import { Briefcase, BriefcaseBusiness, Download, Shirt } from "lucide-react";
 
 // Animation variants
 const container = {
@@ -26,7 +26,7 @@ const Hero = () => {
         className="hidden lg:flex absolute right-0 top-0 cursor-pointer"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, delay: 1, ease: "easeOut" }}
+        // transition={{ duration: 1.2, delay: 1, ease: "easeOut" }}
         whileHover={{ rotate: 5 }} // rotate 5 degrees on hover
         transition={{ type: "spring", stiffness: 50, damping: 10 }}
       >
@@ -96,8 +96,17 @@ const Hero = () => {
               variants={fadeUp}
               className="flex gap-4 justify-center mt-4"
             >
-              <button className="flex items-center gap-2 rounded-full bg-[#C2DE3A] px-8 py-2 tracking-tighter hover:scale-103 transition-transform duration-300 ease-in-out text-gray-900 dark:text-black">
-                <span className="font-medium">Hire Me</span>
+              <button className="group flex items-center gap-2 rounded-full bg-[#C2DE3A] hover:bg-[#d0e75e] px-8 py-2 tracking-tighter transition-all duration-300 ease-in-out text-gray-900 dark:text-black">
+                <a
+                  href="mailto:georgekyrian@gmail.com"
+                  className="flex items-center gap-2"
+                >
+                  <span className="font-medium">Hire Me</span>
+                  <BriefcaseBusiness
+                    size={18}
+                    className="transform transition-transform duration-300 group-hover:rotate-12"
+                  />
+                </a>
               </button>
             </motion.div>
           </div>

@@ -120,19 +120,19 @@ const WorkExperience = () => {
         </div>
 
         {/* Resume Button */}
-         <div className=" flex flex-col justify-end items-end">
-        <div className="flex items-center justify-between py-6 mt-4">
-          <div>
-            <a href="/Elvis_Frimpong_CV.pdf" download="Elvis_Frimpong_CV.pdf">
-              <button className="xl:mt-4 bg-[#C2DE3A] hover:bg-[#cbda84] cursor-pointer font-medium px-6 py-2 rounded-full tracking-tighter flex items-center text-gray-900">
-                <span className="mr-2">
-                  <Download size={20} />
-                </span>
-                Resume
-              </button>
-            </a>
+        <div className=" flex flex-col justify-end items-end">
+          <div className="flex items-center justify-between py-6 mt-4">
+            <div>
+              <a href="/Elvis_Frimpong_CV.pdf" download="Elvis_Frimpong_CV.pdf">
+                <button className="group xl:mt-4 bg-[#C2DE3A] hover:bg-[#cbda84] cursor-pointer font-medium px-6 py-2 rounded-full tracking-tighter flex items-center text-gray-900 transition-colors duration-300">
+                  <span className="mr-2 transform transition-transform duration-300 group-hover:translate-y-1 group-hover:rotate-1">
+                    <Download size={20} />
+                  </span>
+                  Resume
+                </button>
+              </a>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>

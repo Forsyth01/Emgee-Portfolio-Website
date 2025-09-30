@@ -6,7 +6,7 @@ const Testimonial = () => {
   return (
     <div
       id="testimonial"
-      className="text-white bg-[#1A1A19] py-6 transition-colors duration-300"
+      className="text-white bg-[#1A1A19] py-6 transition-colors duration-300 pt-10"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}

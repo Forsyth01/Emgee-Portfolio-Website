@@ -17,7 +17,11 @@ const Portfolio = () => {
 
   const item = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   return (
@@ -43,7 +47,7 @@ const Portfolio = () => {
               key={project.id}
               variants={item}
               whileHover={{ scale: 1.03, y: -5 }}
-              transition={{ type: "spring", stiffness: 300, duration:300 }}
+              transition={{ type: "spring", stiffness: 300, duration: 300 }}
               className={`cursor-pointer ${index > 3 ? "2xl:hidden" : ""}`}
             >
               <Link to={`/projects/${project.id}`}>
@@ -83,9 +87,12 @@ const Portfolio = () => {
             See more projects?
           </p>
           <Link to="/projects">
-            <button className="flex items-center font-medium gap-2 bg-[#C2DE3A] rounded-full px-4 py-2">
+            <button className="group flex items-center font-medium gap-2 bg-[#C2DE3A] rounded-full px-4 py-2 transition">
               View All
-              <ArrowUpRight size={16} />
+              <ArrowUpRight
+                size={16}
+                className="transform transition-transform duration-300 group-hover:rotate-45"
+              />
             </button>
           </Link>
         </div>

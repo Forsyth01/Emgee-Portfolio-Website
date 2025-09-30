@@ -12,27 +12,27 @@ const Connectwithme = () => {
     {
       name: "LinkedIn",
       icon: "/assets/icons/linkedin.png",
-      url: "http://linkedin.com/in/elvisfrimpong",
+      url: "https://www.linkedin.com/in/erhokhon-george-521451248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     },
     {
       name: "Instagram",
       icon: "/assets/icons/instagram.png",
-      url: "https://github.com/elvisfrimpong-da",
+      url: "http://Instagram.com/mg.multim3dia",
     },
     {
       name: "X (Twitter)",
       icon: "/assets/icons/x.png",
-      url: "https://medium.com/@elvisfrimpong.da/",
+      url: "https://X.com/erhokhonG",
     },
     {
       name: "Behance",
       icon: "/assets/icons/behance.png",
-      url: "https://wa.me/message/THBQSEUKWX7LI1",
+      url: "https://www.behance.net/georgekyrian",
     },
     {
       name: "Whatsapp",
       icon: "/assets/icons/whatsapp.png",
-      url: "https://wa.me/message/THBQSEUKWX7LI1",
+      url: "https://http://Wa.me/+2349069578083",
     },
   ];
 
@@ -104,9 +104,9 @@ const Connectwithme = () => {
         {/* Contact Box */}
           <div className="h-[180px] flex flex-col justify-end">
         <div className=" bg-[#F6F6F3] dark:bg-[#1A1A19] p-4 rounded-lg ">
-          <div className="flex items-center gap-4">
+          <div className="flex md:block lg:flex items-center gap-4">
           <div className="">
-            <img src="/images/envelope.png" alt="Contact" className="sm:h-12 " />
+            <img src="/images/envelope.png" alt="Contact" className="md:h-8 lg:h-12 h-12 " />
           </div>
           <div className="">
           <p className=" font-medium tracking-tighter">

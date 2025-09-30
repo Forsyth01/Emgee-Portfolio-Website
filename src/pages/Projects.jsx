@@ -10,12 +10,14 @@ const Projects = () => {
   return (
     <div className="bg-[#F5F8E9]  dark:bg-[#1e1e1e] transition-colors duration-700">
       <BackAndToggleButton />
-        {/* Decorative image */}
-        <div className="absolute right-0 top-15 lg:block hidden pt-4">
-          <img src="/images/penproject.png" alt="" className="h-55" />
-        </div>
-      <div className="w-[90%] min-h-screen m-auto py-10 relative">
+      {/* Decorative image */}
+      <motion.div
+        className="absolute right-0 top-15 lg:block hidden pt-4 cursor-pointer"
+      >
+        <img src="/images/penproject.png" alt="" className="h-56 w-auto" />
+      </motion.div>
 
+      <div className="w-[90%] min-h-screen m-auto py-10 relative">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}

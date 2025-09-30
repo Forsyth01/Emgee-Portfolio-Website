@@ -46,17 +46,24 @@ const Contact = () => {
           {/* Text */}
           <div ref={textRef} className="pt-4 text-center sm:text-left">
             <h1 className="xl:text-4xl text-3xl tracking-tighter leading-[1.1] font-semibold text-gray-900 mb-4 dark:text-gray-50">
-              Let’s bring your next <br className="sm:flex hidden" /> project to life with a <br className="sm:flex hidden" /> creative edge.
+              Let’s bring your next <br className="sm:flex hidden" /> project to
+              life with a <br className="sm:flex hidden" /> creative edge.
             </h1>
             <p className="text-gray-600 mb-6 font-regular tracking-tight dark:text-gray-50">
-              Whether you're building a brand, an app, or a full product experience, <br className="hidden md:flex"/> purpose and clarity.
-              <br className="hidden md:flex"/>
-              <span className="hidden md:flex">I’m here to help you design it with </span>
+              Whether you're building a brand, an app, or a full product
+              experience, <br className="hidden md:flex" /> purpose and clarity.
+              <br className="hidden md:flex" />
+              <span className="hidden md:flex">
+                I’m here to help you design it with{" "}
+              </span>
             </p>
             <div className="flex justify-center sm:justify-start">
-              <button className="bg-[#C2DE3A] font-medium cursor-pointer px-6 py-3 rounded-full hover:bg-[#d7e786] transition-colors tracking-tighter">
-                <a href="mailto:georgekyrian@gmail.com" className="tracking-wider">
-                  Let's Discuss It
+              <button className="bg-[#C2DE3A] font-medium cursor-pointer px-6 py-3 rounded-full hover:bg-[#d7e786] transition-colors tracking-tighter flex items-center gap-2">
+                <a
+                  href="mailto:georgekyrian@gmail.com"
+                  className="tracking-wide flex items-center gap-2"
+                >
+                  Let&apos;s Discuss <span>😊</span>
                 </a>
               </button>
             </div>

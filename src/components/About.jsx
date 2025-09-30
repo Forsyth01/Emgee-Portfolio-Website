@@ -62,7 +62,7 @@ const About = () => {
             </motion.div>
           </div>
 
-          <motion.p className="mt-2 tracking-tight leading-[1.3] dark:text-white xl:hidden" variants={item}>
+          <motion.p className="mt-4 tracking-tight leading-[1.3] dark:text-white xl:hidden" variants={item}>
             Whether it's designing intuitive mobile apps, landing pages, or
             high-impact social content, I bring a strategic and user-focused
             mindset to every project.
