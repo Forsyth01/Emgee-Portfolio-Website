@@ -8,13 +8,13 @@ import BackAndToggleButton from "../components/Back&ToggleButton";
 
 const Projects = () => {
   return (
-    <div className="bg-[#F5F8E9] dark:bg-[#1e1e1e] transition-colors duration-700">
+    <div className="bg-[#F5F8E9]  dark:bg-[#1e1e1e] transition-colors duration-700">
       <BackAndToggleButton />
         {/* Decorative image */}
         <div className="absolute right-0 top-15 lg:block hidden pt-4">
           <img src="/images/penproject.png" alt="" className="h-55" />
         </div>
-      <div className="w-[90%] m-auto xl:py-10 pt-26 relative">
+      <div className="w-[90%] m-auto py-10 relative">
 
         {/* Section Heading */}
         <motion.div

@@ -36,12 +36,12 @@ const Navbar = () => {
   return (
     <>
       {/* Dark/Light Mode Button */}
-      <div className="md:fixed z-[500] top-[6%] right-[5%] hidden md:flex">
+      <div className="md:fixed z-[500] top-[0%] py-7 right-[5%] hidden md:flex">
         <ThemeToggle />
       </div>
 
       {/* Navbar */}
-      <nav className="fixed w-full z-10 top-0 py-4 sm:py-0 backdrop-blur-sm">
+      <nav className="fixed w-full z-10 top-0 py-4 sm:py-0 backdrop-blur-s">
         <div className="py-4 relative">
           {/* Toggle Button for Mobile */}
           <div className="md:hidden flex justify-between item-center mx-3">
@@ -51,10 +51,10 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
-              <MenuIcon size={30}  />
+              <MenuIcon size={30} />
             </button>
           </div>
-  
+
           {/* Mobile Sidebar */}
           <MobileSidebar
             isOpen={isOpen}
