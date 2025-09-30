@@ -2,6 +2,28 @@
 
 export const projects = [
   {
+    id: 133,
+    title: "Daily Food",
+    description: "Crypto to Naira and VTU App",
+    coverImage: "/images/projects/dailyfood/dailyfood2.jpg",
+    images: [
+      { src: "/images/projects/dailyfood/dailyfood1.png", span: true },
+      { src: "/images/projects/dailyfood/dailyfood2.jpg", span: false },
+      { src: "/images/projects/dailyfood/dailyfood3.png", span: false },
+      { src: "/images/projects/dailyfood/dailyfood4.png", span: true },
+    ],
+    roles: ["UI/UX Designer", "Graphic Designer"],
+    tools: [
+      { name: "Figma", icon: "/assets/icons/figma.png" },
+      { name: "CorelDRAW", icon: "/assets/icons/coreldraw.png" },
+    ],
+    roleDescription:
+      "Mintrix Trade is a digital trading platform that allows users to securely buy and sell cryptocurrencies and gift cards for Naira. The mobile app was designed to provide a fast, intuitive, and secure trading experience for both new and experienced users.",
+    link: "https://myportfolio.com",
+    date: "March, 2025",
+  },
+
+  {
     id: 1,
     title: "Mintrix Trade App",
     description: "Crypto to Naira and VTU App",
@@ -28,14 +50,11 @@ export const projects = [
     description: "A Fashion Tech Landing Page",
     coverImage: "/images/projects/posze.png",
     images: [
-      { src: "/images/projects/posze.png", span: true },
-      { src: "/images/projects/posze-2.png", span: false },
+      { src: "/images/projects/pozse/pozse1.png", span: true },
     ],
     roles: ["UI/UX Designer", "Graphic Designer"],
     tools: [
       { name: "Figma", icon: "/assets/icons/figma.png" },
-      { name: "Photoshop", icon: "/assets/icons/photoshop.png" },
-      { name: "CorelDRAW", icon: "/assets/icons/coreldraw.png" },
     ],
     roleDescription:
       "Designed a modern landing page with clear CTAs and engaging visuals. Focused on branding, layout consistency, and responsive UI.",
@@ -48,13 +67,14 @@ export const projects = [
     description: "Admin Management System",
     coverImage: "/images/projects/mintrixadmin.png",
     images: [
-      { src: "/images/projects/mintrixadmin.png", span: true },
-      { src: "/images/projects/mintrixadmin-2.png", span: false },
+      { src: "/images/projects/mintrix1.png", span: true },
+      { src: "/images/projects/mintrix2.png", span: false },
+      { src: "/images/projects/mintrix3.png", span: false },
+      { src: "/images/projects/mintrix4.png", span: true },
     ],
     roles: ["UI/UX Designer"],
     tools: [
       { name: "Figma", icon: "/assets/icons/figma.png" },
-      { name: "Photoshop", icon: "/assets/icons/photoshop.png" },
     ],
     roleDescription:
       "Worked on dashboards and admin flows with emphasis on usability, data visualization, and efficient management screens.",
@@ -112,8 +132,12 @@ export const projects = [
     description: "UI Revamp for EMB Telecomms",
     coverImage: "/images/projects/emb.png",
     images: [
-      { src: "/images/projects/emb/emb1.jpg", span: false },
-      { src: "/images/projects/emb/emb2.jpg", span: false },
+      { src: "/images/projects/emb/emb3.png", span: true },
+      { src: "/images/projects/emb/emb1.png", span: false},
+      { src: "/images/projects/emb/emb2.png", span: false },
+      { src: "/images/projects/emb/emb3.png", span: false },
+      { src: "/images/projects/emb/emb4.png", span: false },
+      { src: "/images/projects/emb/emb5.png", span: true },
     ],
     roles: ["UI/UX Designer"],
     tools: [

@@ -106,7 +106,7 @@ const Connectwithme = () => {
         <div className=" bg-[#F6F6F3] dark:bg-[#1A1A19] p-4 rounded-lg ">
           <div className="flex md:block lg:flex items-center gap-4">
           <div className="">
-            <img src="/images/envelope.png" alt="Contact" className="md:h-8 lg:h-12 h-12 " />
+            <img src="/images/envelope.png" alt="Contact" className="md:h-8 lg:h-12 md:h-12 " />
           </div>
           <div className="">
           <p className=" font-medium tracking-tighter">

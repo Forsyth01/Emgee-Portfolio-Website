@@ -30,7 +30,7 @@ const Portfolio = () => {
       className="dark:bg-[#1A1A19] bg-[#F5F8E9] py-8 transition-colors duration-700"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={container}
     >
       <div className="lg:bg-white lg:dark:bg-[#222222] rounded-2xl w-[90%] m-auto lg:p-8 transition-colors duration-700">
@@ -48,16 +48,20 @@ const Portfolio = () => {
               variants={item}
               whileHover={{ scale: 1.03, y: -5 }}
               transition={{ type: "spring", stiffness: 300, duration: 300 }}
-              className={`cursor-pointer ${index > 3 ? "2xl:hidden" : ""}`}
+              className={`cursor-pointer ${
+                (index > 5 ? "hidden" : "") +
+                " " +
+                (index > 3 ? "2xl:hidden" : "")
+              }`}
             >
               <Link to={`/projects/${project.id}`}>
-                <div className="flex flex-col rounded-2xl shadow bg-white dark:bg-[#F5F8E9] overflow-hidden">
+                <div className=" flex flex-col rounded-2xl shadow bg-white dark:bg-[#F5F8E9] overflow-hidden">
                   {/* Image */}
-                  <div className="w-full">
+                  <div className="w-full x">
                     <img
                       src={project.coverImage}
                       alt={project.title}
-                      className="object-cover rounded-t-2xl"
+                      className="object-cover rounded-t-2xl h-70 w-100"
                     />
                   </div>
 

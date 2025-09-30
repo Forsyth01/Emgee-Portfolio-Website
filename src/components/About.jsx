@@ -1,54 +1,65 @@
-import React from "react";
-import { motion } from "framer-motion";
+// About.jsx
+import React, { useEffect, useRef } from "react";
 import MyApproach from "./MyApproach";
 import SkillsAndTools from "./Skills&Tools";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  // Variants for container & children
-  const container = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2, // animate children one after another
-      },
-    },
-  };
+  const containerRef = useRef(null);
 
-  const item = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const items = containerRef.current.querySelectorAll(".animate-item");
+
+      gsap.fromTo(
+        items,
+        {
+          opacity: 0,
+          y: 80,
+          rotateX: 25,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <motion.div
+    <div
       id="about"
-      className="md:dark:bg-[#1A1A19] dark:bg-[#2A2A28] transition-colors duration-700"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }} // triggers when 20% visible
-      variants={container}
+      ref={containerRef}
+      className="md:dark:bg-[#1A1A19] dark:bg-[#2A2A28] transition-colors duration-700 perspective-[1200px]"
     >
       <div className="md:flex items-center justify-center gap-10 w-[90%] m-auto md:py-20 py-10">
         {/* About Box */}
-        <motion.div
-          className="xl:bg-[#F6F6F3] dark:bg-[#2A2A28] rounded-2xl md:p-6 transition-colors duration-700 2xl:w-[671px]"
-          variants={item}
-        >
-          <motion.h2
-            className="text-3xl font-semibold tracking-tighter ml-2 mb-6 text-gray-900 dark:text-white"
-            variants={item}
-          >
+        <div className="xl:bg-[#F6F6F3] dark:bg-[#2A2A28] rounded-2xl md:p-6 transition-colors duration-700 2xl:w-[671px] animate-item">
+          <h2 className="text-3xl font-semibold tracking-tighter ml-2 mb-6 text-gray-900 dark:text-white animate-item">
             About Me
-          </motion.h2>
+          </h2>
 
           <div className="flex xl:flex md:block items-center gap-4">
-            <motion.img
+            <img
               src="/images/aboutme.png"
               alt="Profile"
-              className="h-[148px] xl:h-[230px] lg:h-[180px] md:h-[220px] md:pb-3 lg:pb-0"
-              variants={item}
+              className="h-[148px] xl:h-[230px] lg:h-[180px] md:h-[220px] md:pb-3 lg:pb-0 animate-item"
             />
-            <motion.div className="text-gray-800 dark:text-white" variants={item}>
+            <div className="text-gray-800 dark:text-white animate-item">
               <p className="leading-[1.3] tracking-tight">
                 I'm Erhokhon George, a UI/UX and graphic designer with over 4
                 years of experience turning ideas into clean, functional, and
@@ -59,32 +70,32 @@ const About = () => {
                 high-impact social content, I bring a strategic and user-focused
                 mindset to every project.
               </p>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.p className="mt-4 tracking-tight leading-[1.3] dark:text-white xl:hidden" variants={item}>
+          <p className="mt-4 tracking-tight leading-[1.3] dark:text-white xl:hidden animate-item">
             Whether it's designing intuitive mobile apps, landing pages, or
             high-impact social content, I bring a strategic and user-focused
             mindset to every project.
-          </motion.p>
+          </p>
 
-          <motion.p className="mt-8 italic text-gray-700 dark:text-white" variants={item}>
+          <p className="mt-8 italic text-gray-700 dark:text-white animate-item">
             Fun Fact: I design best when I’m listening to deep emotional music –
             it keeps my creativity alive.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Skills & MyApproach */}
-        <motion.div className="space-y-6 xl:space-y-4 text-gray-900 dark:text-white" variants={container}>
-          <motion.div className="2xl:w-[600px]" variants={item}>
+        <div className="space-y-6 xl:space-y-4 text-gray-900 dark:text-white">
+          <div className="2xl:w-[600px] animate-item">
             <SkillsAndTools />
-          </motion.div>
-          <motion.div className="2xl:w-[600px]" variants={item}>
+          </div>
+          <div className="2xl:w-[600px] animate-item">
             <MyApproach />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
