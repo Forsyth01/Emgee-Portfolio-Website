@@ -5,12 +5,15 @@ export const projects = [
     id: 133,
     title: "Daily Food",
     description: "Crypto to Naira and VTU App",
-    coverImage: "/images/projects/dailyfood/dailyfood2.jpg",
+    coverImage: "/images/projects/dailyfood/dailyfood8.png",
     images: [
       { src: "/images/projects/dailyfood/dailyfood1.png", span: true },
       { src: "/images/projects/dailyfood/dailyfood2.jpg", span: false },
       { src: "/images/projects/dailyfood/dailyfood3.png", span: false },
+      { src: "/images/projects/dailyfood/dailyfood5.png", span: false },
+      { src: "/images/projects/dailyfood/dailyfood6.png", span: false },
       { src: "/images/projects/dailyfood/dailyfood4.png", span: true },
+      { src: "/images/projects/dailyfood/dailyfood8.png", span: true },
     ],
     roles: ["UI/UX Designer", "Graphic Designer"],
     tools: [

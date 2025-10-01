@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom";
 import { projects } from "../data/projects";
 import Contact from "./Contact";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import BackAndToggleButton from "./Back&ToggleButton";
 import { useState, useEffect } from "react";
 import { X } from "lucide-react"; // X icon for close button
@@ -40,7 +40,7 @@ const ProjectDetail = () => {
 
   return (
     <div className="bg-[#F5F8E9] dark:bg-[#1e1e1e] transition-colors duration-700 py-10">
-      <BackAndToggleButton />
+      {!lightboxImg && <BackAndToggleButton />}
 
       <div className="max-w-[90%] min-h-screen mx-auto py-12">
         {/* Title + Date */}
@@ -186,31 +186,43 @@ const ProjectDetail = () => {
         </motion.div>
       </div>
 
-      {/* Lightbox Overlay */}
-      {lightboxImg && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-          onClick={() => setLightboxImg(null)} // click outside image closes
-        >
-          {/* Close Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation(); // prevent overlay click
-              setLightboxImg(null);
-            }}
-            className="absolute top-10 right-5 md:right-[1%]  text-2xl p-2 rounded-full bg-white text-black hover:bg-opacity-20 transition"
+      <AnimatePresence>
+        {lightboxImg && (
+          <motion.div
+            key="overlay"
+            className="fixed inset-0 bg-black/85 backdrop-blur-sm flex items-center justify-center z-50"
+            onClick={() => setLightboxImg(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           >
-            <X size={32} />
-          </button>
+            {/* Close Button (no animation, always visible) */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxImg(null);
+              }}
+              className="absolute top-10 right-5 md:right-[5%] text-2xl p-2 rounded-full bg-white text-black hover:bg-opacity-20 transition"
+            >
+              <X size={20} />
+            </button>
 
-          <img
-            src={lightboxImg}
-            alt="Enlarged view"
-            className="max-h-[90%] max-w-[90%] rounded-lg shadow-lg"
-            onClick={(e) => e.stopPropagation()} // clicking image itself does not close
-          />
-        </div>
-      )}
+            {/* Image with cinematic slide + zoom */}
+            <motion.img
+              key="lightboxImg"
+              src={lightboxImg}
+              alt="Enlarged view"
+              className="max-h-[90%] max-w-[90%] rounded-lg shadow-lg"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.9, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 50 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Contact Section */}
       <motion.div
