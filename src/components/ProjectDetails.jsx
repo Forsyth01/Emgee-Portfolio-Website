@@ -5,7 +5,7 @@ import Contact from "./Contact";
 import { AnimatePresence, motion } from "framer-motion";
 import BackAndToggleButton from "./Back&ToggleButton";
 import { useState, useEffect } from "react";
-import { X } from "lucide-react"; // X icon for close button
+import { X } from "lucide-react";
 
 // Stagger container for gallery
 const containerVariants = {
@@ -25,6 +25,7 @@ const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === parseInt(id));
   const [lightboxImg, setLightboxImg] = useState(null); // Track clicked image
+  const [loaded, setLoaded] = useState({}); // track loaded state for all images
 
   // Disable scroll when lightbox is open
   useEffect(() => {
@@ -146,7 +147,7 @@ const ProjectDetail = () => {
           </motion.div>
         )}
 
-        {/* Gallery */}
+        {/* Gallery with Lazy Loading */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 gap-y-6"
           variants={containerVariants}
@@ -158,16 +159,23 @@ const ProjectDetail = () => {
             project.images.map((img, idx) => (
               <motion.div
                 key={idx}
-                className={`rounded-lg shadow-lg overflow-hidden ${
+                className={`rounded-lg shadow-lg overflow-hidden relative ${
                   img.span ? "md:col-span-2" : "md:col-span-1"
                 }`}
                 variants={imgVariant}
                 onClick={() => setLightboxImg(img.src)}
               >
+                {!loaded[idx] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700 animate-pulse">
+                    <span className="text-gray-500">Loading...</span>
+                  </div>
+                )}
                 <img
                   src={img.src}
                   alt={`${project.title} screenshot ${idx + 1}`}
-                  className="w-full object-cover cursor-pointer"
+                  loading="lazy" // ✅ native lazy loading
+                  onLoad={() => setLoaded((prev) => ({ ...prev, [idx]: true }))}
+                  className="w-full object-cover cursor-pointer transition-opacity duration-500"
                 />
               </motion.div>
             ))
@@ -176,6 +184,7 @@ const ProjectDetail = () => {
               src={project.coverImage}
               alt={project.title}
               className="rounded-lg shadow-lg cursor-pointer"
+              loading="lazy"
               onClick={() => setLightboxImg(project.coverImage)}
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -186,6 +195,7 @@ const ProjectDetail = () => {
         </motion.div>
       </div>
 
+      {/* Lightbox */}
       <AnimatePresence>
         {lightboxImg && (
           <motion.div
@@ -197,7 +207,6 @@ const ProjectDetail = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
-            {/* Close Button (no animation, always visible) */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -208,13 +217,13 @@ const ProjectDetail = () => {
               <X size={20} />
             </button>
 
-            {/* Image with cinematic slide + zoom */}
             <motion.img
               key="lightboxImg"
               src={lightboxImg}
               alt="Enlarged view"
               className="max-h-[90%] max-w-[90%] rounded-lg shadow-lg"
               onClick={(e) => e.stopPropagation()}
+              loading="lazy" // ✅ even lightbox image lazy loaded
               initial={{ opacity: 0, scale: 0.9, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 50 }}
