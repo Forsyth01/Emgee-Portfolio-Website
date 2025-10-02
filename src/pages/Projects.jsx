@@ -47,7 +47,7 @@ const Projects = () => {
                 delay: index * 0.1,
               }}
               className={`cursor-pointer hover:-translate-y-1 transition-transform duration-700 ${
-                index > 3 ? "2xl:hidden" : ""
+                index > 3 ? "" : ""
               }`}
             >
               <Link to={`/projects/${project.id}`}>
