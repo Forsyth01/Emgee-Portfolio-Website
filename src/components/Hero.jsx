@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useLayoutEffect } from "react";
-import { BriefcaseBusiness } from "lucide-react";
 import gsap from "gsap";
 
 const Hero = () => {
@@ -125,12 +124,12 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="bg-[#F5F8E9] dark:bg-[#1A1A19] transition-colors duration-700 relative overflow-hidden perspective-[1200px]"
+      className="bg-[#F5F8E9] dark:bg-[#1A1A19] transition-colors duration-700 relative overflow-x-hidden overflow-y-hidden perspective-[1200px]"
     >
       {/* Background graphics */}
       <div
         ref={vectorRightRef}
-        className="hidden lg:flex absolute right-0 top-0 pointer-events-auto group"
+        className="hidden lg:flex absolute right-0 top-0 group"
       >
         <img
           src="images/Vector.png"
@@ -140,7 +139,7 @@ const Hero = () => {
       </div>
       <div
         ref={vectorLeftRef}
-        className="hidden xl:flex absolute left-0 bottom-0 pointer-events-auto group"
+        className="hidden xl:flex absolute left-0 bottom-0 group"
       >
         <img
           src="images/Vector2.png"
@@ -180,7 +179,7 @@ const Hero = () => {
             <div className="space-y-4">
               <div
                 ref={(el) => (elementsRef.current[2] = el)}
-                className="md:leading-[110%] leading-[220%]"
+                className="md:leading-[115%] leading-[220%]"
               >
                 <h1 className="font-semibold text-[30px] xs:text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[6xl] tracking-tighter text-gray-900 dark:text-white">
                   <span className="word inline-block mr-1">Designing</span>
@@ -214,7 +213,6 @@ const Hero = () => {
                   className="flex items-center gap-2"
                 >
                   <span className="font-medium">Hire Me</span>
-
                 </a>
               </button>
             </div>
