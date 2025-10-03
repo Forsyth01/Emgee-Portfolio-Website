@@ -22,7 +22,7 @@ const Testimonial = () => {
         </h1>
       </motion.div>
 
-      <motion.div className="py-6">
+      <motion.div className="py-6 overflow-x-hidden">
         <TestimonialCarousel />
       </motion.div>
     </div>
