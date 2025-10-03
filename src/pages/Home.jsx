@@ -10,12 +10,12 @@ import Experience from "../components/Experience";
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />
       <Portfolio />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Experience />
       <Contact />
       {/* <Footer/> */}
