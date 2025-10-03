@@ -26,8 +26,8 @@ const WorkExperience = () => {
       role: "Graphic Designer",
     },
     {
-      title: "EMB Telecoms",
-      date: "August 2024 ",
+      title: "EverythingdevOps",
+      date: "August 2025 ",
       role: "Graphic Designer",
     },
     {
