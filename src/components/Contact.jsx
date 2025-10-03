@@ -21,12 +21,12 @@ const Contact = () => {
 
     tl.fromTo(
       imageRef.current,
-      { opacity: 0, x: -100 },
-      { opacity: 1, x: 0, duration: 1, ease: "power3.out" }
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
     ).fromTo(
       textRef.current,
-      { opacity: 0, x: 100 },
-      { opacity: 1, x: 0, duration: 1, ease: "power3.out" },
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
       "-=0.7"
     );
   }, []);

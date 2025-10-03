@@ -25,9 +25,10 @@ const Portfolio = () => {
   };
 
   return (
+    <div className="dark:bg-[#1A1A19] bg-[#F5F8E9] py-8 transition-colors duration-700">
     <motion.div
       id="portfolio"
-      className="dark:bg-[#1A1A19] bg-[#F5F8E9] py-8 transition-colors duration-700"
+      className=""
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
@@ -102,6 +103,7 @@ const Portfolio = () => {
         </div>
       </div>
     </motion.div>
+      </div>
   );
 };
 

@@ -22,10 +22,7 @@ const Testimonial = () => {
         </h1>
       </motion.div>
 
-      <motion.div
-      
-        className="py-6"
-      >
+      <motion.div className="py-6">
         <TestimonialCarousel />
       </motion.div>
     </div>

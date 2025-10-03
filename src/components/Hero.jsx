@@ -179,7 +179,7 @@ const Hero = () => {
             <div className="space-y-4">
               <div
                 ref={(el) => (elementsRef.current[2] = el)}
-                className="md:leading-[115%] leading-[220%]"
+                className="md:leading-[110%] leading-[220%]"
               >
                 <h1 className="font-semibold text-[30px] xs:text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[6xl] tracking-tighter text-gray-900 dark:text-white">
                   <span className="word inline-block mr-1">Designing</span>

@@ -5,6 +5,8 @@
 *{
   scroll-behavior: smooth;
    font-family: "Poppins", sans-serif;
+   /* overflow-x: hidden; */
+   overflow-x: initial;
 }
 button{
   cursor: pointer;
