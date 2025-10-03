@@ -4,7 +4,7 @@ import TestimonialCard from "./TestimonialCard";
 
 const TestimonialCarousel = () => {
   return (
-    <div className=" block lg:flex items-center py-2 transition-colors duration-700">
+    <div className="overflow-x-hidden block lg:flex items-center py-2 transition-colors duration-700">
       <div className="hidden lg:flex lg:relative lg:left-[5%] text-center md:text-left lg:w-[45%] xl:w-[40%] ">
         <div className="">
           <img src="/images/quote.png" alt="" className="h-30 my-2" />
