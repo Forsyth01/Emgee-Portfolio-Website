@@ -64,7 +64,7 @@ const About = () => {
               />
               <div className="text-gray-800 dark:text-white animate-item">
                 <p className="leading-[1.3] tracking-tight">
-                  I'm Erhokhon George, a UI/UX and graphic designer with over 4
+                  I'm Erhokhon George, a UI/UX and graphic designer with over 5
                   years of experience turning ideas into clean, functional, and
                   visually engaging designs.
                 </p>
