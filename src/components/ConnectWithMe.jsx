@@ -103,13 +103,13 @@ const Connectwithme = () => {
 
         {/* Contact Box */}
           <div className="h-[180px] flex flex-col justify-end">
-        <div className=" bg-[#F6F6F3] dark:bg-[#1A1A19] p-4 rounded-lg ">
+        <div className=" bg-[#F6F6F3] dark:bg-[#1A1A19] p-4 py-6 rounded-2xl ">
           <div className="flex md:block lg:flex items-center gap-4">
           <div className="">
             <img src="/images/envelope.png" alt="Contact" className="md:h-8 lg:h-12 md:h-12 " />
           </div>
           <div className="">
-          <p className=" font-medium tracking-tighter">
+          <p className=" font-medium tracking-tighter leading-4">
             Let's talk about your <br /> Project
           </p>
           <p className="text-gray-800 dark:text-gray-200 tracking-tight">
