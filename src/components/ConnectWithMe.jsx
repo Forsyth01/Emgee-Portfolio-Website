@@ -76,7 +76,7 @@ const Connectwithme = () => {
       <div>
         {/* Heading */}
         <h2 className="text-3xl tracking-tighter font-semibold text-gray-800 dark:text-white mb-4 my-4">
-          <span className="tracking-tighter font-regular">Connect</span> <br />
+          <span className="tracking-tighter font-normal">Connect</span> <br />
           <span className="font-semibold tracking-tighter">With Me</span>
         </h2>
 
@@ -110,14 +110,14 @@ const Connectwithme = () => {
           </div>
           <div className="">
           <p className=" font-medium tracking-tighter">
-            Let's talk about your Project
+            Let's talk about your <br /> Project
           </p>
-          <p className="text-gray-800 dark:text-gray-200">
+          <p className="text-gray-800 dark:text-gray-200 tracking-tight">
             Drop me a mail -{" "}
             <span className="font-medium tracking-tighter cursor-pointer">
               <a
                 href="mailto:georgekyrian@gmail.com"
-                className="dark:text-[#C2DE3A] hover:underline"
+                className="dark:text-[#C2DE3A] hover:underline tracking-tight"
               >
                 georgekyrian@gmail.com
               </a>

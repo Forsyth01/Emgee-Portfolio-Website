@@ -52,9 +52,9 @@ const Projects = () => {
             >
               <Link to={`/projects/${project.id}`}>
                 {/* Card Container */}
-                <div className="flex flex-col rounded-2xl shadow bg-white dark:bg-[#F5F8E9]">
+                 <div className=" flex flex-col rounded-2xl shadow bg-white dark:bg-[#F5F8E9] overflow-hidden">
                   {/* Image */}
-                  <div>
+                  <div className="w-full x">
                     <img
                       src={project.coverImage}
                       alt={project.title}

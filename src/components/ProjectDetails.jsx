@@ -172,10 +172,10 @@ const ProjectDetail = () => {
                 )}
                 <img
                   src={img.src}
-                  alt={`${project.title} screenshot ${idx + 1}`}
+                  alt={`${project.title} ${idx + 1}`}
                   loading="lazy" // ✅ native lazy loading
                   onLoad={() => setLoaded((prev) => ({ ...prev, [idx]: true }))}
-                  className="w-full object-cover cursor-pointer transition-opacity duration-500"
+                  className=" cursor-pointer transition-opacity duration-500"
                 />
               </motion.div>
             ))

@@ -78,7 +78,7 @@ const WorkExperience = () => {
         {/* Header */}
         <div className="flex justify-between py-4">
           <h2 className="text-3xl font-semibold tracking-tighter text-gray-800 dark:text-white mb-4">
-            <span className="font-regular tracking-tighter">Work </span>
+            <span className="font-normal tracking-tighter">Work </span>
             <br /> <span className="font-semibold">Experience</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6 flex flex-col justify-end">
@@ -108,11 +108,11 @@ const WorkExperience = () => {
                     {exp.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 font-medium text-sm flex flex-col text-right">
+                <p className="text-gray-600 tracking-tight dark:text-gray-400 font-normal text-sm flex flex-col text-right">
                   {exp.date}
                 </p>
               </li>
-              <li className="ml-4 text-gray-600 dark:text-gray-400">
+              <li className="ml-4 text-gray-600  tracking-tight font-normal dark:text-gray-400">
                 {exp.role}
               </li>
             </ul>
@@ -120,8 +120,11 @@ const WorkExperience = () => {
         </div>
 
         {/* Resume Button */}
-        <div className=" flex flex-col justify-end items-end">
-          <div className="flex items-center justify-between py-6 mt-4">
+        <div className=" flex justify-between items-center py-6 mt-4">
+            <div className="">
+              <p className="tracking-tight font-medium">See more</p>
+            </div>
+          <div className="flex items-center justify-between ">
             <div>
               <a href="/Elvis_Frimpong_CV.pdf" download="Elvis_Frimpong_CV.pdf">
                 <button className="group xl:mt-4 bg-[#C2DE3A] hover:bg-[#cbda84] cursor-pointer font-medium px-6 py-2 rounded-full tracking-tighter flex items-center text-gray-900 transition-colors duration-300">
