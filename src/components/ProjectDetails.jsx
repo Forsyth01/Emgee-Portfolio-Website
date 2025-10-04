@@ -136,7 +136,7 @@ const ProjectDetail = () => {
               Read Description:
             </h2>
             <motion.p
-              className="text-md mb-6 text-gray-800 dark:text-gray-300 whitespace-pre-line"
+              className="text-md mb-6 text-gray-800 dark:text-gray-300 whitespace-pre-line "
               initial={{ opacity: 0, y: 8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}

@@ -123,7 +123,24 @@ These designs made the app more versatile, bridging everyday food needs with sma
     link: "https://geniz.com",
     date: "March, 2025",
   },
-
+{
+  id: 13,
+  title: "Pozse",
+  description: "Landing Page (UI/UX Design)",
+  coverImage: "/images/projects/posze.png",
+  images: [
+    { src: "/images/projects/pozse/pozse1.png", span: true },
+    { src: "/images/projects/pozse/pozse2.png", span: true },
+    { src: "/images/projects/pozse/pozse3.png", span: true },
+    { src: "/images/projects/pozse/pozse4.png", span: true }
+  ],
+  roles: ["UI/UX Designer"],
+  tools: [{ name: "Figma", icon: "/assets/icons/figma.png" }],
+  roleDescription: `Pozse is a brand that merges fashion and technology. I designed their landing page, which served as the first digital touchpoint for the brand. The landing page not only showcased the brand’s vision but also included a waitlist form to collect early sign-ups and build community interest ahead of their main product launch (a social media app and other extensions). The design helped position Pozse as both innovative and stylish.`,
+  link: "https://myecommerce.com",
+  date: "July, 2024",
+},
+                                             
   {
     id: 6,
     title: "Textworld.co",
