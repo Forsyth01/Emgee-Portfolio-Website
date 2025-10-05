@@ -181,12 +181,12 @@ const Hero = () => {
                 ref={(el) => (elementsRef.current[2] = el)}
                 className="md:leading-[110%] leading-[220%]"
               >
-                <h1 className="font-semibold text-[30px] xs:text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[6xl] tracking-tighter text-gray-900 dark:text-white md:space-y-[6px]">
+                <h1 className="font-semibold text-[30px] xs:text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[6xl] tracking-tighter text-gray-900 dark:text-white md:space-y-[10px]">
                   <span className="word inline-block mr-1">Designing</span>
                   <span className="word inline-block mr-1">Digital</span>
                   <br />
                   <span className="word inline-block mr-1">Experiences</span>
-                  <span className="word inline-block mr-1">That</span>
+                  <span className="word inline-block mr-1">that</span>
                   <span className="word inline-block mr-1">Convert</span>
                   <span className="word inline-block mr-1">&</span>
                   <br className="hidden sm:flex 2xl:hidden" />
