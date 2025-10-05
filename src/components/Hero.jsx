@@ -124,7 +124,7 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="bg-[#F5F8E9] dark:bg-[#1A1A19] transition-colors duration-700 relative overflow-y-hidden perspective-[1200px]"
+      className="bg-[#F5F8E9] dark:bg-[#1A1A19] transition-colors duration-700 relative  perspective-[1200px]"
     >
       {/* Background graphics */}
       <div
