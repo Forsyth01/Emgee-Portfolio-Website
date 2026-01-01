@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const containerRef = useRef(null);
-
+ 
   useEffect(() => {
     const ctx = gsap.context(() => {
       const items = containerRef.current.querySelectorAll(".animate-item");
